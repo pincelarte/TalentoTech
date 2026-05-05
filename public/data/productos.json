@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "nombre": "Apache",
+    "precio": 1200,
+    "stock": 10,
+    "imagen": "/images/apache.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Cheyenne",
+    "precio": 1350,
+    "stock": 15,
+    "imagen": "/images/cheyenne.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Kiowa",
+    "precio": 1100,
+    "stock": 8,
+    "imagen": "/images/kiowa.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Pawnee",
+    "precio": 1400,
+    "stock": 12,
+    "imagen": "/images/pawnee.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Sioux",
+    "precio": 1250,
+    "stock": 20,
+    "imagen": "/images/sioux.png"
+  },
+  {
+    "id": 6,
+    "nombre": "Choktaw",
+    "precio": 1500,
+    "stock": 5,
+    "imagen": "/images/choktaw.png"
+  }
+]

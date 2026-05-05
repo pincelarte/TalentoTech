@@ -1,0 +1,19 @@
+.contador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #797949;
+  border-radius: 8px;
+}
+
+.valor {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}

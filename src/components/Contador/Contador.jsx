@@ -1,0 +1,17 @@
+import { useState } from 'react';
+import Button from "../Buttons/Button";
+import styles from "./contador.module.css"
+
+function Contador() {
+    const [contador, setContador] = useState(0);
+    return (
+        <div className={styles.contador}>
+            <p className={styles.valor}>Cantidad: {contador}</p>
+            <div className={styles.buttonContainer}>
+                <Button onClick={() => setContador(contador - 1)}>-</Button>
+                <Button onClick={() => setContador(contador + 1)}>+</Button>
+            </div>
+        </div>
+    );
+}
+export default Contador;

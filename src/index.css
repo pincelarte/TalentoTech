@@ -1,0 +1,18 @@
+*{
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;      
+     background-color: var(--verde-claro);
+     color: #515539;
+}
+
+:root {
+  --color-fondo: #797949;       /* 60% - beige */
+  --verde-claro: #616943;       /* 30% - degradé arriba */
+  --verde-oscuro: #152208;      /* 30% - degradé abajo */
+  --acento: #FD9E72;            /* 10% - botones y detalles */
+}

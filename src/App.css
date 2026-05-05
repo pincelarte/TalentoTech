@@ -1,0 +1,22 @@
+.productos-container {
+  width: 100%;
+  display: block;
+}
+
+.imagenPrincipal{
+  width: 760px;
+  height: auto;
+  display: block;
+  margin: auto;
+  margin-bottom: 30PX;
+  border-radius: 20PX;
+  border: solid black 1px;
+}
+/* En tu archivo CSS global (ej: App.css) */
+
+
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

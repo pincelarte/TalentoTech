@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    background: linear-gradient(var(--verde-oscuro), var(--verde-claro));
+    padding: 20px;
+    color:#a3b0a2;
+    align-items: center;
+    margin-bottom:20px;
+    justify-content: space-between;
+
+}
+
+.header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
