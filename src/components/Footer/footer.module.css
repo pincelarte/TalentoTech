@@ -1,8 +1,33 @@
-.footer{
-display: flex;
-color: white;
-padding: 20px;
-margin-top: 20px;
-justify-content: center;
-background: linear-gradient(var(--verde-claro), var(--verde-oscuro));
+.footer {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  background: linear-gradient(var(--verde-claro), var(--verde-oscuro));
+  text-align: center;
+}
+
+.equipo {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.socialLinks {
+  margin-top: 10px;
+}
+
+.link {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
 }

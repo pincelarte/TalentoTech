@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "Amanda y Carlos",
+        "posicion": "Productores",
+        "img": "/images/AmandaYCarlos.jpg"
+
+    },
+     {
+        "nombre": "Julio",
+        "posicion": "Marketing y distribución",
+        "img": "/images/Julio.jpg"
+
+    },
+     {
+        "nombre": "Ardilla",
+        "posicion": "Sommelier de Nueces",
+        "img": "/images/ardilla.jpg"
+
+    }
+]
