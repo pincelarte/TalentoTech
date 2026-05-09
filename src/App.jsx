@@ -1,21 +1,26 @@
+import TarjetaProducto from "./components/TarjetaProducto/TarjetaProducto.jsx";
 import Layout from "./components/Layout/Layout"
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer.jsx";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
 import "./App.css";
+
 
 
 function App() {
   
   return (
-
-    <Layout>
-      <img src="/images/fondo.png" alt="foto de fondo" className="imagenPrincipal" />
-
-      <div className="productos-container">
-       
-        <ItemListContainer mensaje="Nuestras Variedades de Pecán" />
-      </div>
+    <>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<TarjetaProducto/>} />
+        <Route path="/producto/:id" element={<TarjetaProducto />} />
+      </Route> 
+    </Routes>
+        
       
-    </Layout>
+    
+    </>
   )
 }
 

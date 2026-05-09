@@ -8,7 +8,7 @@ function Contador() {
         <div className={styles.contador}>
             <p className={styles.valor}>Cantidad: {contador}</p>
             <div className={styles.buttonContainer}>
-                <Button onClick={() => setContador(contador - 1)}>-</Button>
+                <Button onClick={() => setContador(prev => Math.max(0, prev - 1))}>-</Button>
                 <Button onClick={() => setContador(contador + 1)}>+</Button>
             </div>
         </div>

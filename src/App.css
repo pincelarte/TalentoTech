@@ -8,10 +8,10 @@
   height: auto;
   display: block;
   margin: auto;
-  margin-bottom: 30PX;
-  border-radius: 20PX;
+  margin-bottom: 30px;
+  border-radius: 20px;
   border: solid black 1px;
-}
+  }
 /* En tu archivo CSS global (ej: App.css) */
 
 
