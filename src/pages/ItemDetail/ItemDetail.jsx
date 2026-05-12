@@ -24,6 +24,7 @@ function ItemDetail() {
         name={producto.nombre}
         price={producto.precio}
         image={producto.imagen}
+        clickable={false}
       />
     </div>
   );

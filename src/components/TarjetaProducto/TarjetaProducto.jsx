@@ -1,11 +1,22 @@
 import styles from "./tarjetaProducto.module.css";
 import Button from "../Buttons/Button";
-import Contador from "../Contador/Contador"
+import Contador from "../Contador/Contador";
+import { Link } from "react-router-dom";
 
-const TarjetaProducto = ({ name, price, image }) => {
+const TarjetaProducto = ({ name, price, image, id, clickable = true }) => {
   return (
     <div className={styles.tarjeta}>
-      <img src={image} alt={name} className={styles.img} />
+      {clickable ? (
+        <Link to={`/producto/${id}`}>
+          <div className={styles.imgWrapper}>
+            <img src={image} alt={name} className={styles.img} />
+          </div>
+        </Link>
+      ) : (
+        <div className={styles.imgWrapper}>
+          <img src={image} alt={name} className={styles.img} />
+        </div>
+      )}
       <h3>{name}</h3>
       <p>Precio x Kg: ${price}</p>
       <Contador/>

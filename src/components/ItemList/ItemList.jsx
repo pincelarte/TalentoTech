@@ -6,13 +6,15 @@ export const ItemList = ({ productos }) => {
   return (
     <div className={styles.grid}>
       {productos.map((prod) => (
-     <Link to={`/producto/${prod.id}`} key={prod.id}>
+     
       <TarjetaProducto 
+      key={prod.id}
+      id={prod.id}
       name={prod.nombre} 
       price={prod.precio} 
       image={prod.imagen} 
     />
-  </Link>
+  
 ))}
     </div>
   );
