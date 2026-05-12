@@ -1,4 +1,4 @@
-import styles from "./CardPerson.module.css";
+import styles from "./cardPerson.module.css";
 
 const TarjetaPersona = ({ nombre, posicion, img }) => {
   return (
