@@ -2,8 +2,9 @@ import { useState } from 'react';
 import Button from "../Buttons/Button";
 import styles from "./contador.module.css"
 
-function Contador() {
+function Contador({stock}) {
     const [contador, setContador] = useState(0);
+    <Button onClick={() => setContador(prev => Math.min(stock ?? Infinity, prev + 1))}>+</Button>
     return (
         <div className={styles.contador}>
             <p className={styles.valor}>Cantidad: {contador}</p>
