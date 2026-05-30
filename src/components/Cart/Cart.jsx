@@ -1,12 +1,13 @@
-import styles from "./cart.module.css";
 
-function Cart() {
-  return (
-    <div className={styles.container}>
-      <h1>Carrito de Compras</h1>
-      {/* Aquí iría la lógica del carrito */}
-    </div>
-  );
-}
+import React from 'react';
+
+const Cart = () => {
+ return (
+ <div>
+ <h1>Carrito de Compras</h1>
+ <p>Aquí se mostrarán los productos que agregaste.</p>
+ </div>
+ );
+};
 
 export default Cart;
