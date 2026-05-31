@@ -1,9 +1,19 @@
+import { useState } from "react";
+import { useCart } from "../../context/useCart.jsx";
 import styles from "./tarjetaProducto.module.css";
 import Button from "../Buttons/Button";
 import Contador from "../Contador/Contador";
 import { Link } from "react-router-dom";
 
 const TarjetaProducto = ({ name, price, image, id, stock, clickable = true }) => {
+  const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({ id, name, price, image, stock }, quantity);
+    setQuantity(1);
+  };
+
   return (
     <div className={styles.tarjeta}>
       {clickable ? (
@@ -20,8 +30,8 @@ const TarjetaProducto = ({ name, price, image, id, stock, clickable = true }) =>
       <h3>{name}</h3>
       <p>Precio x Kg: ${price}</p>
       {stock !== undefined && <p>Stock disponible: {stock} kg</p>}
-      <Contador/>
-      <Button>Comprar</Button>
+      <Contador quantity={quantity} setQuantity={setQuantity} />
+      <Button onClick={handleAddToCart}>Agregar al carrito</Button>
     </div>
   );
 };
