@@ -1,5 +1,5 @@
 
-import TarjetaProducto from "./components/TarjetaProducto/TarjetaProducto.jsx";
+import TarjetaProducto from "./components/item/TarjetaProducto.jsx";
 import Layout from "./components/Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";

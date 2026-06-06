@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import TarjetaProducto from "../../components/TarjetaProducto/TarjetaProducto";
+import TarjetaProducto from "../../components/item/TarjetaProducto";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
 import styles from "./ItemDetail.module.css";
 
 function ItemDetail() {
@@ -8,23 +10,23 @@ function ItemDetail() {
   const [producto, setProducto] = useState(null);
 
   useEffect(() => {
-    fetch("/data/productos.json")
-      .then(res => res.json())
-      .then(data => {
-        const prod = data.find(p => p.id === parseInt(id));
-        setProducto(prod);
-      });
+    const docRef = doc(db, "nueces", id);
+    getDoc(docRef).then((snap) => {
+      if (snap.exists()) {
+        setProducto({ id: snap.id, ...snap.data() });
+      }
+    });
   }, [id]);
 
   if (!producto) return <div>Cargando...</div>;
 
   return (
     <div className={styles.container}>
-      <TarjetaProducto 
-        name={producto.nombre}
-        price={producto.precio}
-        image={producto.imagen}
-        stock={producto.stock}
+      <TarjetaProducto
+        name={producto.Nombre}
+        price={producto.Precio}
+        Imagen={producto.Imagen}
+        stock={producto.Stock}
         clickable={false}
       />
     </div>

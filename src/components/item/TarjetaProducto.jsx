@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { useCart } from "../../context/useCart.jsx";
 import styles from "./tarjetaProducto.module.css";
-import Button from "../Buttons/Button";
-import Contador from "../Contador/Contador";
+import Button from "../Buttons/Button.jsx";
+import Contador from "../Contador/Contador.jsx";
 import { Link } from "react-router-dom";
 
-const TarjetaProducto = ({ name, price, image, id, stock, clickable = true }) => {
+const TarjetaProducto = ({ name, price, Imagen, id, stock, clickable = true }) => {
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
 
   const handleAddToCart = () => {
-    addToCart({ id, name, price, image, stock }, quantity);
+    addToCart({ id, name, price, Imagen, stock }, quantity);
     setQuantity(1);
   };
 
@@ -19,12 +19,12 @@ const TarjetaProducto = ({ name, price, image, id, stock, clickable = true }) =>
       {clickable ? (
         <Link to={`/producto/${id}`}>
           <div className={styles.imgWrapper}>
-            <img src={image} alt={name} className={styles.img} />
+            <img src={Imagen} alt={name} className={styles.img} />
           </div>
         </Link>
       ) : (
         <div className={styles.imgWrapper}>
-          <img src={image} alt={name} className={styles.img} />
+          <img src={Imagen} alt={name} className={styles.img} />
         </div>
       )}
       <h3>{name}</h3>
