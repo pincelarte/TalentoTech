@@ -1,11 +1,12 @@
-
-import TarjetaProducto from "./components/item/TarjetaProducto.jsx";
 import Layout from "./components/Layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import ItemDetail from "./pages/ItemDetail/ItemDetail";
 import Cart from "./components/Cart/Cart";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import Login from "./pages/Login/Login";
+import Dashboard from "./components/forms/Dashboard";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,15 @@ function App() {
           <Route path="/shop" element={<ItemListContainer mensaje="Nuestros Productos" />} />
           <Route path="/producto/:id" element={<ItemDetail />} />
           <Route path="/carrito" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/admin"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
         </Route>
       </Routes>
     </>

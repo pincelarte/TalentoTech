@@ -15,7 +15,7 @@ const Cart = () => {
           <ul className={styles.list}>
             {cart.map(item => (
               <li key={item.id} className={styles.item}>
-                <img src={item.image} alt={item.name} className={styles.itemImg} />
+                <img src={item.Imagen} alt={item.name} className={styles.itemImg} />
                 <div className={styles.itemInfo}>
                   <span className={styles.itemName}>{item.name}</span>
                   <span>Cantidad: {item.quantity} kg</span>

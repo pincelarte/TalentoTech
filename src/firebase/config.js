@@ -1,7 +1,5 @@
-
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // <-- Esta línea la agregamos para usar Firestore
-
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMyHcvBY70kmAGa-8BNMSMGI8ke-UvWPU",
@@ -12,7 +10,7 @@ const firebaseConfig = {
   appId: "1:1030908520487:web:5fc3dd76065b1e821f8602"
 };
 
-// Inicio Firebase en la app, luego tomo la conexion (db) y exporto para que sea usada.
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-export { db };
+
+export { app, db };
