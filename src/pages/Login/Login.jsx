@@ -1,22 +1,33 @@
-import { useState } from 'react';
+﻿import { useEffect, useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useAuth();
+  const { login, rol, usuario, cargando } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!cargando && usuario) {
+      if (rol === 'admin') {
+        navigate('/admin', { replace: true });
+      } else {
+        navigate('/shop', { replace: true });
+      }
+    }
+  }, [usuario, rol, cargando, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+
     try {
       await login(email, password);
-      navigate('/admin');
-    } catch {
+    } catch (err) {
+      console.log("ERROR LOGIN:", err.code, err.message);
       setError('Email o contraseña incorrectos');
     }
   };
@@ -43,6 +54,9 @@ function Login() {
           required
         />
         <button type="submit">Ingresar</button>
+        <p style={{ textAlign: 'center', fontSize: '0.9rem' }}>
+          ¿No tenés cuenta? <Link to="/register">Registrate</Link>
+        </p>
       </form>
     </div>
   );

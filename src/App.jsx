@@ -7,6 +7,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import Login from "./pages/Login/Login";
 import Dashboard from "./components/forms/Dashboard";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Register from './pages/Register/Register';
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/producto/:id" element={<ItemDetail />} />
           <Route path="/carrito" element={<Cart />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/admin"
             element={
