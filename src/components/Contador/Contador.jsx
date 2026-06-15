@@ -9,7 +9,7 @@ function Contador({ stock, quantity, setQuantity }) {
   };
 
   const decrementar = () => {
-    if (quantity > 1) {
+    if (quantity > 0) {
       setQuantity(prev => prev - 1);
     }
   };
