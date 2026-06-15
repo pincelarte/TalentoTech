@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { collection, addDoc, updateDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase/config';
-import Formproducto from './Formproducto';
+import Formproducto from './FormProducto';
 
 const estadoInicialForm = {
   Nombre: '',
