@@ -30,7 +30,7 @@
         <h3>{name}</h3>
         <p>Precio x Kg: ${price}</p>
         {stock !== undefined && <p>Stock disponible: {stock} kg</p>}
-        <Contador quantity={quantity} setQuantity={setQuantity} />
+        <Contador quantity={quantity} setQuantity={setQuantity} stock={stock} />
         <Button onClick={handleAddToCart} disabled={quantity === 0}>Agregar al carrito</Button>
       </div>
     );

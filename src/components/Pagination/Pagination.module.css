@@ -1,0 +1,45 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.pageList {
+  display: flex;
+  list-style: none;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+.pageButton,
+.navButton {
+  border: 1px solid rgb(18, 31, 4);
+  background-color: #fff;
+  color: rgb(18, 31, 4);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pageButton:hover,
+.navButton:hover:not(:disabled) {
+  background-color: rgb(18, 31, 4);
+  color: #fff;
+}
+
+.pageButton.active {
+  background-color: rgb(18, 31, 4);
+  color: #fff;
+  font-weight: bold;
+}
+
+.navButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
