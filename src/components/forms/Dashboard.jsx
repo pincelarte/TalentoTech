@@ -68,13 +68,13 @@ function Dashboard() {
         <tbody>
           {productos.map((p) => (
             <tr key={p.id}>
-              <td>
+              <td data-label="Imagen">
                 <img src={p.Imagen} alt={p.Nombre} className={styles.imgTabla} />
               </td>
-              <td>{p.Nombre}</td>
-              <td>${p.Precio}</td>
-              <td>{p.Stock} kg</td>
-              <td>
+              <td data-label="Nombre">{p.Nombre}</td>
+              <td data-label="Precio">${p.Precio}</td>
+              <td data-label="Stock">{p.Stock} kg</td>
+              <td data-label="Acciones" className={styles.celdaAcciones}>
                 <button className={styles.btnEditar} onClick={() => handleEditClick(p)}>
                   Editar
                 </button>

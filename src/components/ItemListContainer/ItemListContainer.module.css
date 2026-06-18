@@ -11,3 +11,13 @@
     color: rgb(18, 31, 4);
     font-size: 3rem;
 }
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+
+  .container h2 {
+    font-size: 1.8rem;
+  }
+}

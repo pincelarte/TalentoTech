@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './header.module.css';
 import { useCart } from '../../context/useCart.jsx';
@@ -8,21 +9,35 @@ function Header() {
   const cantidad = getCartQuantity();
   const { usuario, rol, logout } = useAuth();
   const navigate = useNavigate();
+  const [menuAbierto, setMenuAbierto] = useState(false);
 
   const handleLogout = async () => {
     await logout();
     navigate('/');
+    setMenuAbierto(false);
   };
+
+  const cerrarMenu = () => setMenuAbierto(false);
 
   return (
     <header className={styles.header}>
-      <h1>🐿️ Nueces & Pecanes</h1>
-      <nav>
+      <div className={styles.topRow}>
+        <h1>🐿️ Tierra Pecán</h1>
+        <button
+          className={styles.menuToggle}
+          onClick={() => setMenuAbierto((prev) => !prev)}
+          aria-label="Abrir menú de navegación"
+          aria-expanded={menuAbierto}
+        >
+          {menuAbierto ? '✕' : '☰'}
+        </button>
+      </div>
+      <nav className={`${styles.nav} ${menuAbierto ? styles.navAbierto : ''}`}>
         <ul>
-          <li><Link to="/">Inicio</Link></li>
-          <li><Link to="/shop">Shop</Link></li>
+          <li><Link to="/" onClick={cerrarMenu}>Inicio</Link></li>
+          <li><Link to="/shop" onClick={cerrarMenu}>Shop</Link></li>
           <li>
-            <Link to="/carrito" className={styles.cartLink}>
+            <Link to="/carrito" className={styles.cartLink} onClick={cerrarMenu}>
               🛒 Carrito
               {cantidad > 0 && (
                 <span className={styles.badge}>{cantidad}</span>
@@ -31,15 +46,15 @@ function Header() {
           </li>
 
           {!usuario && (
-            <li><Link to="/login">Iniciar sesión</Link></li>
+            <li><Link to="/login" onClick={cerrarMenu}>Iniciar sesión</Link></li>
           )}
 
           {usuario && rol === 'admin' && (
-            <li><Link to="/admin">Dashboard</Link></li>
+            <li><Link to="/admin" onClick={cerrarMenu}>Dashboard</Link></li>
           )}
 
           {usuario && rol !== 'admin' && (
-            <li><Link to="/shop">Mi cuenta</Link></li>
+            <li><Link to="/shop" onClick={cerrarMenu}>Mi cuenta</Link></li>
           )}
 
           {usuario && (

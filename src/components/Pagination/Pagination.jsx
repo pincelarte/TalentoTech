@@ -2,16 +2,13 @@ import styles from "./pagination.module.css";
 
 export const Pagination = ({
   currentPage,
-  totalPages,
-  goToPage,
   nextPage,
   prevPage,
   isFirstPage,
   isLastPage,
 }) => {
-  if (totalPages <= 1) return null;
-
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+  // Si ya estamos en la página 1 y no hay siguiente, ni mostramos los controles.
+  if (isFirstPage && isLastPage) return null;
 
   return (
     <nav className={styles.pagination} aria-label="Paginación de productos">
@@ -23,21 +20,7 @@ export const Pagination = ({
         ◀ Anterior
       </button>
 
-      <ul className={styles.pageList}>
-        {pageNumbers.map((page) => (
-          <li key={page}>
-            <button
-              className={`${styles.pageButton} ${
-                page === currentPage ? styles.active : ""
-              }`}
-              onClick={() => goToPage(page)}
-              aria-current={page === currentPage ? "page" : undefined}
-            >
-              {page}
-            </button>
-          </li>
-        ))}
-      </ul>
+      <span className={styles.currentPageLabel}>Página {currentPage}</span>
 
       <button
         className={styles.navButton}

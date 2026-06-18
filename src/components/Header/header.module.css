@@ -1,15 +1,32 @@
 .header {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     background: linear-gradient(var(--verde-oscuro), var(--verde-claro));
     padding: 20px;
     color:#a3b0a2;
-    align-items: center;
     margin-bottom:20px;
-    justify-content: space-between;
-
 }
 
-.header ul {
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #a3b0a2;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+}
+
+.nav ul {
   display: flex;
   gap: 20px;
   list-style: none;
@@ -49,4 +66,44 @@
 }
 .btnLogout:hover {
   background: rgba(255,255,255,0.1);
+}
+
+/* ---- Mobile: menú hamburguesa ---- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .topRow {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .topRow h1 {
+    font-size: 1.3rem;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
+    width: 100%;
+  }
+
+  .nav.navAbierto {
+    max-height: 400px;
+    margin-top: 14px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
 }
