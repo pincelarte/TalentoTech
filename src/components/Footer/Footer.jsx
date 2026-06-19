@@ -15,9 +15,34 @@ function Footer() {
         
         <div className={styles.section}>
           <div className={styles.socialLinks}>
-            <a href="#" className={styles.link}>Instagram</a>
-            <a href="#" className={styles.link}>WhatsApp</a>
-          </div>
+  <a
+    href="https://instagram.com/TU_USUARIO"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.link}
+    aria-label="Instagram de Tierra Pecán"
+  >
+    <img
+      src="/images/instagram-wordmark.svg"
+      alt="Instagram"
+      className={styles.socialIcon}
+    />
+  </a>
+
+  <a
+    href="https://wa.me/549XXXXXXXXXX"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.link}
+    aria-label="WhatsApp de Tierra Pecán"
+  >
+    <img
+      src="/images/whatsapp-wordmark.svg"
+      alt="WhatsApp"
+      className={styles.socialIcon}
+    />
+  </a>
+</div>
         </div>
 
       </div>

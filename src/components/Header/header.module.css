@@ -9,6 +9,24 @@
     margin-bottom:20px;
 }
 
+.topRow h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
+  color: var(--crema);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.logoImg {
+  height: 150px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+
 .topRow {
   display: flex;
   align-items: center;
@@ -68,7 +86,7 @@
   background: rgba(255,255,255,0.1);
 }
 
-/* ---- Mobile: menú hamburguesa ---- */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -83,6 +101,11 @@
 
   .topRow h1 {
     font-size: 1.3rem;
+  }
+
+  .logoImg {
+    height: 64px;
+    max-width: 120px;
   }
 
   .menuToggle {

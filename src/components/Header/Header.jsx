@@ -22,7 +22,7 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.topRow}>
-        <h1>🐿️ Tierra Pecán</h1>
+        <img src="/images/logo.jpg" alt="Tierra Pecán" className={styles.logoImg} />
         <button
           className={styles.menuToggle}
           onClick={() => setMenuAbierto((prev) => !prev)}

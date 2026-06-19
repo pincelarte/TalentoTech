@@ -5,7 +5,7 @@
 }
 
 body{
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;      
+     font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      background-color: var(--verde-claro);
      color: #515539;
 }
@@ -15,4 +15,13 @@ body{
   --verde-claro: #616943;       /* 30% - degradé arriba */
   --verde-oscuro: #152208;      /* 30% - degradé abajo */
   --acento: #FD9E72;            /* 10% - botones y detalles */
+
+  /* Paleta extendida para el hero y elementos de marca */
+  --cascara: #C68642;           /* marrón cáscara de pecán */
+  --cascara-oscura: #8a5a2b;
+  --crema: #F1E9D8;             /* texto claro / placas grabadas */
+  --verde-bosque: #2b3a1a;      /* intermedio para degradados */
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
