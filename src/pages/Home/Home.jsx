@@ -14,7 +14,7 @@ function Home() {
             De nuestra tierra,<br />a tu mesa.
           </h1>
           <p className={styles.heroSubtitle}>
-            Hace más de 10 años, Juan Pablo y Martín cuidan a mano cada uno de sus más de 200 nogales distribuidos en tres hectáreas. Cada pecán que llega a tu casa pasó primero por sus manos, no por una fábrica; un proceso artesanal que se nota en el sabor.
+            Hace más de 10 años, Juan Pablo y Martín cuidan a mano cada uno de sus más de 200 nogales distribuidos en tres hectáreas. Cada pecán que llega a tu casa pasó primero por sus manos; un proceso artesanal que se nota en el sabor.
           </p>
           <div className={styles.heroActions}>
             <Link to="/shop" className={styles.ctaPrimary}>
@@ -27,11 +27,10 @@ function Home() {
 
       <section className={styles.variedades}>
         <div className={styles.variedadesIntro}>
-          <h2 className={styles.variedadesTitle}>Seis nueces, seis personalidades</h2>
+          <h2 className={styles.variedadesTitle}>Seis nueces, seis texturas</h2>
           <p className={styles.variedadesText}>
             No todas las pecán son iguales. Cada variedad tiene su propio
             tamaño, dulzor y textura, igual que la tierra de donde sale.
-            Elegí la tuya o probalas todas.
           </p>
         </div>
         <div className={styles.variedadesImgWrapper}>
