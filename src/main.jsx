@@ -5,12 +5,15 @@ import './index.css'
 import App from './App.jsx'
 import { CartProvider } from './context/CartContext.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
+import { SearchProvider } from './context/contextSearch.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <AuthProvider>
       <CartProvider>
-        <App />
+        <SearchProvider>
+          <App />
+        </SearchProvider>
       </CartProvider>
     </AuthProvider>
   </BrowserRouter>

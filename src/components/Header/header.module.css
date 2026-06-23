@@ -33,6 +33,12 @@
   gap: 12px;
 }
 
+.searchWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .menuToggle {
   display: none;
   background: none;
@@ -97,6 +103,12 @@
   .topRow {
     width: 100%;
     justify-content: space-between;
+  }
+
+  .searchWrapper {
+    order: 3;
+    flex-basis: 100%;
+    margin-top: 10px;
   }
 
   .topRow h1 {

@@ -1,0 +1,54 @@
+.formContainer {
+  max-width: 380px;
+  width: 100%;
+}
+
+.relativeWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.iconWrapper {
+  position: absolute;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-fondo);
+  transition: color 0.25s ease;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 16px 10px 42px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: #515539;
+  background-color: var(--crema);
+  border: 1px solid var(--color-fondo);
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.searchInput::placeholder {
+  color: var(--color-fondo);
+  opacity: 0.8;
+}
+
+/* Al hacer foco, se ilumina con el acento de tu ecommerce */
+.searchInput:focus {
+  border-color: var(--acento);
+  box-shadow: 0 0 12px rgba(253, 158, 114, 0.35);
+}
+
+.relativeWrapper:focus-within .searchIcon {
+  color: var(--acento);
+}

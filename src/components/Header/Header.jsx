@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './header.module.css';
 import { useCart } from '../../context/useCart.jsx';
 import { useAuth } from '../../context/AuthContext';
+import SearchBar from '../Search/SearchBar.jsx';
 
 function Header() {
   const { getCartQuantity } = useCart();
@@ -23,6 +24,9 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.topRow}>
         <img src="/images/logo.jpg" alt="Tierra Pecán" className={styles.logoImg} />
+        <div className={styles.searchWrapper}>
+          <SearchBar />
+        </div>
         <button
           className={styles.menuToggle}
           onClick={() => setMenuAbierto((prev) => !prev)}

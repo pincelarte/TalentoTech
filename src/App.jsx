@@ -8,6 +8,7 @@ import Login from "./pages/Login/Login";
 import Dashboard from "./components/forms/Dashboard";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Register from './pages/Register/Register';
+import FoundedSearch from "./components/Search/FoundedSearch.jsx";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<ItemListContainer mensaje="Nuestros Productos" />} />
           <Route path="/producto/:id" element={<ItemDetail />} />
+          <Route path="/busqueda" element={<FoundedSearch />} />
           <Route path="/carrito" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
