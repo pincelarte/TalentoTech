@@ -51,4 +51,5 @@
 
 .relativeWrapper:focus-within .searchIcon {
   color: var(--acento);
+  
 }
