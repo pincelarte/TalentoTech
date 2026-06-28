@@ -10,17 +10,39 @@ export const CartProvider = ({ children }) => {
     if (itemInCart) {
       const updatedCart = cart.map(item =>
         item.id === product.id
-          ? { ...item, quantity: item.quantity + quantity }
+          ? { ...item, quantity: Math.min(item.quantity + quantity, item.stock ?? Infinity) }
           : item
       );
       setCart(updatedCart);
     } else {
-      setCart(prevCart => [...prevCart, { ...product, quantity }]);
+      setCart(prevCart => [...prevCart, { ...product, quantity: Math.min(quantity, product.stock ?? Infinity) }]);
     }
   };
 
   const removeFromCart = (productId) => {
     setCart(prevCart => prevCart.filter(item => item.id !== productId));
+  };
+
+  const increaseQuantity = (productId, step = 1) => {
+    setCart(prevCart =>
+      prevCart.map(item =>
+        item.id === productId
+          ? { ...item, quantity: Math.min(item.quantity + step, item.stock ?? Infinity) }
+          : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (productId, step = 1) => {
+    setCart(prevCart =>
+      prevCart
+        .map(item =>
+          item.id === productId
+            ? { ...item, quantity: item.quantity - step }
+            : item
+        )
+        .filter(item => item.quantity > 0)
+    );
   };
 
   const clearCart = () => {
@@ -40,6 +62,8 @@ export const CartProvider = ({ children }) => {
       cart,
       addToCart,
       removeFromCart,
+      increaseQuantity,
+      decreaseQuantity,
       clearCart,
       getCartQuantity,
       getCartTotal

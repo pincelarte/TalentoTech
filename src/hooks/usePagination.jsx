@@ -1,11 +1,11 @@
 import { useState, useMemo, useEffect } from "react";
 
 /**
- * Hook de paginación genérico.
+ 
  *
- * @param {Array} items - El arreglo completo de elementos a paginar (ej: productos).
- * @param {number} itemsPerPage - Cantidad de elementos por página (default: 6).
- * @returns {Object} Datos y funciones para manejar la paginación.
+ * @param {Array} items 
+ * @param {number} itemsPerPage 
+ * @returns {Object} 
  */
 export const usePagination = (items = [], itemsPerPage = 6) => {
   const [currentPage, setCurrentPage] = useState(1);

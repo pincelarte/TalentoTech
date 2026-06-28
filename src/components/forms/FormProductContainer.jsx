@@ -13,7 +13,7 @@ const estadoInicialForm = {
 function FormProductContainer({ productoAEditar, onGuardado, onCancelar }) {
   const [datosForm, setDatosForm] = useState(estadoInicialForm);
 
-  // Cuando cambia productoAEditar, puebla o limpia el formulario
+  
   useEffect(() => {
     if (productoAEditar) {
       setDatosForm(productoAEditar);
@@ -46,7 +46,7 @@ function FormProductContainer({ productoAEditar, onGuardado, onCancelar }) {
         alert('Producto guardado con éxito.');
       }
       setDatosForm(estadoInicialForm);
-      onGuardado(); // avisa al Dashboard para que recargue la lista
+      onGuardado(); 
     } catch (error) {
       console.error('Error:', error);
       alert('Hubo un error al guardar.');

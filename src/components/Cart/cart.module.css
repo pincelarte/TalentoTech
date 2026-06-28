@@ -55,6 +55,49 @@
   font-size: 1rem;
 }
 
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qtyBtn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4a6741;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.qtyBtn:hover {
+  background-color: #354e2e;
+}
+
+.qtyBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.qtyValue {
+  min-width: 50px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.stockAviso {
+  color: #cc6600;
+  font-size: 0.8rem;
+}
+
 .removeBtn {
   background: none;
   border: none;

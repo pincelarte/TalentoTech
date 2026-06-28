@@ -7,7 +7,7 @@ export const Pagination = ({
   isFirstPage,
   isLastPage,
 }) => {
-  // Si ya estamos en la página 1 y no hay siguiente, ni mostramos los controles.
+  
   if (isFirstPage && isLastPage) return null;
 
   return (
