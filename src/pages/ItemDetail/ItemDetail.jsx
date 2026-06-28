@@ -29,6 +29,9 @@ function ItemDetail() {
         stock={producto.Stock}
         clickable={false}
       />
+      {producto.Descripcion && (
+        <div className={styles.descripcion}>{producto.Descripcion}</div>
+      )}
     </div>
   );
 }

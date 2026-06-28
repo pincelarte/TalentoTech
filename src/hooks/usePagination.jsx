@@ -14,8 +14,7 @@ export const usePagination = (items = [], itemsPerPage = 6) => {
     return Math.max(1, Math.ceil(items.length / itemsPerPage));
   }, [items.length, itemsPerPage]);
 
-  // Si la lista de items cambia (ej: llega de Firebase) y la página actual
-  // queda fuera de rango, la reacomodamos para evitar una página vacía.
+  
   useEffect(() => {
     if (currentPage > totalPages) {
       setCurrentPage(1);

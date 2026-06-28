@@ -8,6 +8,7 @@ const estadoInicialForm = {
   Precio: '',
   Stock: '',
   Imagen: '',
+  Descripcion: '',
 };
 
 function FormProductContainer({ productoAEditar, onGuardado, onCancelar }) {
@@ -32,6 +33,7 @@ function FormProductContainer({ productoAEditar, onGuardado, onCancelar }) {
       Precio: Number(datosForm.Precio),
       Stock: Number(datosForm.Stock),
       Imagen: datosForm.Imagen,
+      Descripcion: datosForm.Descripcion || '',
     };
 
     try {

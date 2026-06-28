@@ -31,6 +31,15 @@ function Formproducto({ datosForm, manejarCambio, manejarEnvio, modoEdicion }) {
         placeholder="0"
       />
 
+      <label>Descripción</label>
+      <textarea
+        name="Descripcion"
+        value={datosForm.Descripcion}
+        onChange={manejarCambio}
+        placeholder="Contale al cliente qué hace especial a este producto..."
+        rows={4}
+      />
+
       <label>URL de imagen</label>
       <input
         name="Imagen"
